@@ -60,111 +60,12 @@
             <th></th>
           </tr>
         </thead>
-        <tbody class="note-table">
-          <!-- <tr>
-            <td class="acc-name">Adobe Creative Cloud</td>
-            <td class="acc-username">Russell navin</td>
-            <td class="acc-email">russ.navin@gmail.com</td>
-            <td class="acc-password">*********</td>
-            <td class="acc-icon">
-              <i class="fas fa-edit"></i>
-              <i class="fas fa-trash"></i>
-            </td>
-          </tr>
-          <tr>
-            <td class="acc-name">Adobe Creative Cloud</td>
-            <td class="acc-username">Russell navin</td>
-            <td class="acc-email">russ.navin@gmail.com</td>
-            <td class="acc-password">*********</td>
-            <td class="acc-icon">
-              <i class="fas fa-edit"></i>
-              <i class="fas fa-trash"></i>
-            </td>
-          </tr>
-          <tr>
-            <td class="acc-name">Adobe Creative Cloud</td>
-            <td class="acc-username">Russell navin</td>
-            <td class="acc-email">russ.navin@gmail.com</td>
-            <td class="acc-password">*********</td>
-            <td class="acc-icon">
-              <i class="fas fa-edit"></i>
-              <i class="fas fa-trash"></i>
-            </td>
-          </tr>
-          <tr>
-            <td class="acc-name">Adobe Creative Cloud</td>
-            <td class="acc-username">Russell navin</td>
-            <td class="acc-email">russ.navin@gmail.com</td>
-            <td class="acc-password">*********</td>
-            <td class="acc-icon">
-              <i class="fas fa-edit"></i>
-              <i class="fas fa-trash"></i>
-            </td>
-          </tr>
-          <tr>
-            <td class="acc-name">Adobe Creative Cloud</td>
-            <td class="acc-username">Russell navin</td>
-            <td class="acc-email">russ.navin@gmail.com</td>
-            <td class="acc-password">*********</td>
-            <td class="acc-icon">
-              <i class="fas fa-edit"></i>
-              <i class="fas fa-trash"></i>
-            </td>
-          </tr>
-          <tr>
-            <td class="acc-name">Adobe Creative Cloud</td>
-            <td class="acc-username">Russell navin</td>
-            <td class="acc-email">russ.navin@gmail.com</td>
-            <td class="acc-password">*********</td>
-            <td class="acc-icon">
-              <i class="fas fa-edit"></i>
-              <i class="fas fa-trash"></i>
-            </td>
-          </tr>
-          <tr>
-            <td class="acc-name">Adobe Creative Cloud</td>
-            <td class="acc-username">Russell navin</td>
-            <td class="acc-email">russ.navin@gmail.com</td>
-            <td class="acc-password">*********</td>
-            <td class="acc-icon">
-              <i class="fas fa-edit"></i>
-              <i class="fas fa-trash"></i>
-            </td>
-          </tr>
-          <tr>
-            <td class="acc-name">Adobe Creative Cloud</td>
-            <td class="acc-username">Russell navin</td>
-            <td class="acc-email">russ.navin@gmail.com</td>
-            <td class="acc-password">*********</td>
-            <td class="acc-icon">
-              <i class="fas fa-edit"></i>
-              <i class="fas fa-trash"></i>
-            </td>
-          </tr>
-          <tr>
-            <td class="acc-name">Adobe Creative Cloud</td>
-            <td class="acc-username">Russell navin</td>
-            <td class="acc-email">russ.navin@gmail.com</td>
-            <td class="acc-password">*********</td>
-            <td class="acc-icon">
-              <i class="fas fa-edit"></i>
-              <i class="fas fa-trash"></i>
-            </td>
-          </tr> -->
-          <tr>
-            <td class="acc-name">Adobe Creative Cloud</td>
-            <td class="acc-username">Russell navin</td>
-            <td class="acc-email">russ.navin@gmail.com</td>
-            <td class="acc-password">*********</td>
-            <td class="acc-icon">
-              <i class="fas fa-edit"></i>
-              <i class="fas fa-trash"></i>
-            </td>
-          </tr>
+        <tbody class="acc-table">
+          <!-- Accounts -->
         </tbody>
         <tfoot>
           <tr>
-            <td colspan="1" class="table-foot">Total Account: 32</td>
+            <td colspan="1" class="table-foot">Total Account: <span></span></td>
             <td colspan="4" class="pagination">
               <ul>
                 <li><i class="fas fa-arrow-left"></i></li>
@@ -186,8 +87,8 @@
     <!-- footer -->
     <footer>Copyright © 2020 Yourpass. All rights reserved</footer>
 
-    <!-- Modal -->
-    <div class="modal-bg">
+    <!-- Add Modal -->
+    <div class="modal-bg addModal">
       <div class="wrapper">
         <div class="title">New Account</div>
         <form action="">
@@ -196,7 +97,7 @@
             <input
               type="text"
               placeholder="Enter account name"
-              class="input new-acc"
+              class="input new-account"
             />
           </div>
           <div class="input_field">
@@ -227,6 +128,51 @@
           <div class="submit_field">
             <button class="btn-cancel">Cancel</button>
             <button class="btn-add">Add account</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div class="modal-bg editModal">
+      <div class="wrapper">
+        <div class="title">Edit Account</div>
+        <form action="">
+          <div class="input_field">
+            <label for="Acc-name">Account Name</label>
+            <input
+              type="text"
+              placeholder="Enter account name"
+              class="input edit-account"
+            />
+          </div>
+          <div class="input_field">
+            <label for="Acc-name">Email ID</label>
+            <input
+              type="email"
+              placeholder="Enter account email"
+              class="input edit-email"
+            />
+          </div>
+          <div class="input_field">
+            <label for="Acc-name">Username</label>
+            <input
+              type="text"
+              placeholder="Enter username"
+              class="input edit-username"
+            />
+          </div>
+          <div class="input_field">
+            <label for="Acc-name">Password</label>
+            <input
+              type="text"
+              placeholder="Enter password"
+              class="input edit-password"
+            />
+          </div>
+          <div class="submit_field">
+            <button class="btn-edit-cancel">Cancel</button>
+            <button class="btn-edit">Edit Account</button>
           </div>
         </form>
       </div>
