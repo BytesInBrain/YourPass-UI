@@ -3,14 +3,14 @@ let modalBg = document.querySelector(".addModal");
 let modalClose = document.querySelector(".btn-cancel");
 let modalAdd = document.querySelector(".btn-add");
 let accTable = document.querySelector(".acc-table");
-
+var accObj;
 // show Accounts
 showAccounts();
 
 function showAccounts() {
   let acc = localStorage.getItem("accounts");
   if (acc == null) {
-    acObj = [];
+    accObj = [];
   } else {
     accObj = JSON.parse(acc);
   }
