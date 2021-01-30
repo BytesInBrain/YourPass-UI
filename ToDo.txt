@@ -1,0 +1,4 @@
+1. Fetch Get, Post API
+2. Login and Sign UP
+3. Local Storage and API alert implimentation
+4. UI Improvements - Moblie view, copy button, generate password button, signUp and Login Page
