@@ -43,6 +43,35 @@ nav {
   width: 24px;
   height: 24px;
 }
+
+.search {
+  float: left;
+}
+
+.search input,
+.search input:focus {
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.06)
+    ),
+    #292929;
+  border-radius: 4px;
+  min-width: 300px;
+  padding: 16px;
+  color: #ffffff;
+  opacity: 0.38;
+}
+.search input::placeholder {
+  color: #ffffff;
+  opacity: 0.38;
+}
+.search img {
+  position: relative;
+  top: 8px;
+  right: 40px;
+}
+
 .personlogo {
   height: 40px;
   float: right;
@@ -94,6 +123,10 @@ nav {
   position: relative;
   font-size: large;
   bottom: 4px;
+}
+
+.left-arrow {
+  transform: matrix(-1, 0, 0, -1, 0, 0);
 }
 
 footer {
@@ -157,34 +190,43 @@ footer {
 }
 
 .acc-name {
-  width: 15%;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  width: 18%;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .acc-username {
-  width: 12%;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  width: 18%;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .acc-email {
-  width: 15%;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  width: 20%;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
+
 .acc-password {
-  width: 8%;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  width: 15%;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .acc-icon {
-  /* padding-right: 2rem;
-  padding-left: 2rem; */
-  width: 50%;
-}
-.acc-icon i {
-  margin-right: 1rem;
-  margin-left: 1rem;
   float: right;
+  padding: 0.5rem;
+}
+
+.acc-icon div img.copy-acc {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.acc-icon img.edit-acc {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.acc-icon img.delete-acc {
+  padding: 0.5rem;
+  cursor: pointer;
 }
 
 tfoot tr td {
@@ -241,7 +283,7 @@ td {
   padding: 5px;
   position: absolute;
   z-index: 1;
-  bottom: 150%;
+  bottom: 100%;
   left: 50%;
   margin-left: -75px;
   opacity: 0;
@@ -356,6 +398,34 @@ td {
   opacity: 0.38;
 }
 
+.input_field span {
+  position: relative;
+  transform: translate(0, -50%);
+  float: right;
+  top: -40px;
+  right: 16px;
+}
+
+.input_field span .eye {
+  cursor: pointer;
+  opacity: 0.38;
+}
+.input_field span img.eye:hover {
+  opacity: 1;
+}
+
+.input_field span #vector-plus {
+  margin-right: 5px;
+  height: 24px;
+  width: 24px;
+  cursor: pointer;
+  opacity: 0.14;
+}
+
+.input_field span img#vector-plus:hover {
+  opacity: 0.3;
+}
+
 .submit_field {
   display: flex;
   justify-content: flex-end;
@@ -394,7 +464,7 @@ td {
 }
 
 /* -------------------End modal---------------- */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 992px) {
   .addacc {
     display: none;
   }
@@ -461,7 +531,78 @@ td {
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 768px) {
+  .search {
+    display: none;
+  }
+
+  .addacc {
+    display: none;
+  }
+
+  .user {
+    display: none;
+  }
+
+  .account .personlogo {
+    display: flex;
+    flex-direction: column;
+  }
+  .content-table thead {
+    display: none;
+  }
+  .content-table tbody td {
+    display: block;
+    width: auto;
+  }
+
+  .content-table tbody tr .acc-icon {
+    display: none;
+  }
+
+  .content-table tbody tr {
+    border-radius: 8px;
+  }
+
+  .content-table tbody td:first-child {
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.06),
+        rgba(255, 255, 255, 0.06)
+      ),
+      #292929;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .content-table tbody td:nth-child(2)::before {
+    content: "Username";
+  }
+  .content-table tbody td:nth-child(3)::before {
+    content: "Email";
+  }
+  .content-table tbody td:nth-child(4)::before {
+    content: "Password";
+  }
+
+  .content-table tfoot td {
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+  }
+
+  .content-table tbody tr td {
+    text-align: right;
+  }
+  .content-table td::before {
+    float: left;
+    margin-right: left;
+    font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 576px) {
   .main-content {
     padding-left: 1.5rem;
     padding-right: 1.5rem;

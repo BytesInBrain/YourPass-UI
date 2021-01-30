@@ -3,14 +3,13 @@ let modalBg = document.querySelector(".addModal");
 let modalClose = document.querySelector(".btn-cancel");
 let modalAdd = document.querySelector(".btn-add");
 let accTable = document.querySelector(".acc-table");
-
 // show Accounts
 showAccounts();
 
 function showAccounts() {
   let acc = localStorage.getItem("accounts");
   if (acc == null) {
-    acObj = [];
+    accObj = [];
   } else {
     accObj = JSON.parse(acc);
   }
@@ -21,15 +20,18 @@ function showAccounts() {
     <tr id = "acc${index}" class="acc-body">
       <td class="acc-name">${element.account}</td>
       <td class="acc-username">${element.username}</td>
-      <td class="acc-email">${element.email}</td>
-      <td class="acc-password">${"*".repeat(element.password.length)}</td>
+      <td class="acc-email">${element.email}
+      </td>
+      <td class="acc-password">
+      ${"*".repeat(element.password.length)}
+      </td>
       <td class="acc-icon">
-      <i id = "edit${index}" onClick="editAccount(${index})" class="fas fa-edit edit-acc"></i>
-      <i id = "delete${index}" onClick="deleteAcc(${index})" class="fas fa-trash delete-acc"></i>
       <div class="tooltip">
       <span class="tooltiptext" id="myTooltip${index}">Copy to clipboard</span>
-      <i id = "copy${index}" onClick="copyAcc(${index})" onmouseout="outFunc(${index})" class="fas fa-copy copy-acc"></i>
+      <img class="copy-acc" id = "copy${index}" onClick="copyAcc(${index})" onmouseout="outFunc(${index})" src="static/svgs/copy.svg" alt="Copy"/>
       </div>
+      <img class="edit-acc" id = "edit${index}" onClick="editAccount(${index})" src="static/svgs/edit.svg" alt="Edit"/>
+      <img class="delete-acc" id = "delete${index}" onClick="deleteAcc(${index})" src="static/svgs/delete.svg" alt="Delete"/>
       </td>
     <tr>
     `;
@@ -185,4 +187,27 @@ modalAdd.addEventListener("click", function (e) {
 
   showAccounts();
   e.preventDefault();
+});
+
+// search
+
+let searchText = document.getElementById("searchText");
+searchText.addEventListener("input", function () {
+  let inputVal = searchText.value;
+  let accRows = document.getElementsByClassName("acc-body");
+  Array.from(accRows).forEach(function (element) {
+    let accName = element.getElementsByClassName("acc-name")[0].innerText;
+    let accUsername = element.getElementsByClassName("acc-username")[0]
+      .innerText;
+    let accEmail = element.getElementsByClassName("acc-email")[0].innerText;
+    if (
+      accName.includes(inputVal) ||
+      accUsername.includes(inputVal) ||
+      accEmail.includes(inputVal)
+    ) {
+      element.style.display = "table-row";
+    } else {
+      element.style.display = "none";
+    }
+  });
 });

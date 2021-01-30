@@ -9,9 +9,6 @@
     <!-- favicon -->
     <link rel="shortcut icon" href="static/svgs/Logo.svg" />
 
-    <!-- icons -->
-    <link rel="stylesheet" href="static/css/all.css" />
-
     <!-- font -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -28,6 +25,16 @@
       <nav>
         <div class="logo">
           <img class="logof" src="static/svgs/Header.svg" alt="YourPass" />
+        </div>
+        <div class="search">
+          <input
+            type="text"
+            id="searchText"
+            autocomplete="off"
+            placeholder="Search for an account"
+            class="input edit-password"
+          />
+          <img class="search-icon" src="static/svgs/search.svg" alt="Search" />
         </div>
         <div class="account">
           <button type="button" class="addacc">
@@ -68,7 +75,13 @@
             <td colspan="1" class="table-foot">Total Account: <span></span></td>
             <td colspan="4" class="pagination">
               <ul>
-                <li><i class="fas fa-arrow-left"></i></li>
+                <li>
+                  <img
+                    class="left-arrow"
+                    src="static/svgs/arrow_right_alt.svg"
+                    alt="Left Arrow"
+                  />
+                </li>
                 <li>Previous</li>
                 <li>1</li>
                 <li>2</li>
@@ -76,7 +89,12 @@
                 <li>4</li>
                 <li>5</li>
                 <li>Next</li>
-                <li><i class="fas fa-arrow-right"></i></li>
+                <li>
+                  <img
+                    src="static/svgs/arrow_right_alt.svg"
+                    alt="Right Arrow"
+                  />
+                </li>
               </ul>
             </td>
           </tr>
@@ -124,6 +142,14 @@
               class="input new-password"
               style="-webkit-text-security: disc"
             />
+            <span>
+              <img
+                id="vector-plus"
+                src="static/svgs/Vector.svg"
+                alt="vector-plus"
+              />
+              <img class="eye" src="static/svgs/eye.svg" alt="eye" />
+            </span>
           </div>
           <div class="submit_field">
             <button class="btn-cancel">Cancel</button>
@@ -165,10 +191,13 @@
           <div class="input_field">
             <label for="Acc-name">Password</label>
             <input
-              type="text"
+              type="password"
               placeholder="Enter password"
               class="input edit-password"
             />
+            <span>
+              <img class="eye" src="static/svgs/eye.svg" alt="eye" />
+            </span>
           </div>
           <div class="submit_field">
             <button class="btn-edit-cancel">Cancel</button>
