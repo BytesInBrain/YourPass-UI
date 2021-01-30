@@ -121,12 +121,11 @@ function editAccount(index) {
 
     localStorage.setItem("accounts", JSON.stringify(accObj));
     editModal.classList.remove("bg-active");
-    showAccounts(accObj);
+    showAccounts();
   });
 
   editCancel.addEventListener("click", function (e) {
     e.preventDefault();
-
     editAcc.value = "";
     editEmail.value = "";
     editUsername.value = "";
