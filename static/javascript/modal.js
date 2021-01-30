@@ -142,7 +142,7 @@ modalBtn.addEventListener("click", function () {
 // close modal
 modalClose.addEventListener("click", function (e) {
   e.preventDefault();
-  let newAcc = document.querySelector(".new-acc");
+  let newAcc = document.querySelector(".new-account");
   let newEmail = document.querySelector(".new-email");
   let newUsername = document.querySelector(".new-username");
   let newPassword = document.querySelector(".new-password");
