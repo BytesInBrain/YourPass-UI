@@ -3,6 +3,7 @@ let modalBg = document.querySelector(".addModal");
 let modalClose = document.querySelector(".btn-cancel");
 let modalAdd = document.querySelector(".btn-add");
 let accTable = document.querySelector(".acc-table");
+
 // show Accounts
 showAccounts();
 
@@ -113,7 +114,6 @@ function editAccount(index) {
 
   editBtn.addEventListener("click", function (e) {
     e.preventDefault();
-
     accObj[index].account = editAcc.value;
     accObj[index].email = editEmail.value;
     accObj[index].username = editUsername.value;
