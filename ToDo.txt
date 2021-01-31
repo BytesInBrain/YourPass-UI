@@ -2,3 +2,31 @@
 2. Login and Sign UP
 3. Local Storage and API alert implimentation
 4. UI Improvements - Moblie view, copy button, generate password button, signUp and Login Page
+
+
+
+
+<!-- <td colspan="4" class="pagination">
+              <ul>
+                <li>
+                  <img
+                    class="left-arrow"
+                    src="static/svgs/arrow_right_alt.svg"
+                    alt="Left Arrow"
+                  />
+                </li>
+                <li>Previous</li>
+                <li>1</li>
+                <li>2</li>
+                <li class="active">3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>Next</li>
+                <li>
+                  <img
+                    src="static/svgs/arrow_right_alt.svg"
+                    alt="Right Arrow"
+                  />
+                </li>
+              </ul>
+            </td> -->

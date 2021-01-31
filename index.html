@@ -20,6 +20,12 @@
     <link rel="stylesheet" href="static/css/style.css" />
   </head>
   <body>
+    <script>
+      if(localStorage.getItem("bearer")== "null"){
+      isLocal = true
+      window.location.href = "/login.html"
+  }
+    </script>
     <!-- nav bar -->
     <header>
       <nav>
@@ -43,13 +49,17 @@
               alt="YourPass"
             /><span>Add Account</span>
           </button>
-          <div class="personlogo">
+          <button type="button" class="addacc" id="logoutbtn">
+            <span>LogOut</span>
+          </button>
+
+          <!-- <div class="personlogo">
             <img class="logoper" src="static/svgs/Person.svg" alt="Person" />
             <div class="user">
               <div class="user-name">Russel Navin</div>
               <div class="user-email">russ.navin@gmail.com</div>
             </div>
-          </div>
+          </div> -->
         </div>
       </nav>
     </header>
@@ -72,30 +82,6 @@
         <tfoot>
           <tr>
             <td colspan="1" class="table-foot">Total Account: <span></span></td>
-            <!-- <td colspan="4" class="pagination">
-              <ul>
-                <li>
-                  <img
-                    class="left-arrow"
-                    src="static/svgs/arrow_right_alt.svg"
-                    alt="Left Arrow"
-                  />
-                </li>
-                <li>Previous</li>
-                <li>1</li>
-                <li>2</li>
-                <li class="active">3</li>
-                <li>4</li>
-                <li>5</li>
-                <li>Next</li>
-                <li>
-                  <img
-                    src="static/svgs/arrow_right_alt.svg"
-                    alt="Right Arrow"
-                  />
-                </li>
-              </ul>
-            </td> -->
           </tr>
         </tfoot>
       </table>
@@ -120,7 +106,7 @@
           <div class="input_field">
             <label for="new-email">Email ID</label>
             <input
-              type="email"
+              type="text"
               placeholder="Enter account email"
               class="input new-email"
             />
@@ -139,15 +125,16 @@
               type="password"
               placeholder="Enter password"
               class="input new-password"
-              style="-webkit-text-security: disc"
+              id="tpsad1"
             />
             <span>
               <img
                 id="vector-plus"
                 src="static/svgs/Vector.svg"
                 alt="vector-plus"
+                onclick="genpassA()"
               />
-              <img class="eye" src="static/svgs/eye.svg" alt="eye" />
+              <img onclick="togglePassA()" class="eye" src="static/svgs/eye.svg" alt="eye" />
             </span>
           </div>
           <div class="submit_field">
@@ -190,12 +177,19 @@
           <div class="input_field">
             <label for="edit-password">Password</label>
             <input
-              type="text"
+              type="password"
               placeholder="Enter password"
               class="input edit-password"
+              id="tpsad2"
             />
             <span>
-              <img class="eye" src="static/svgs/eye.svg" alt="eye" />
+              <img
+                id="vector-plus"
+                src="static/svgs/Vector.svg"
+                alt="vector-plus"
+                onclick="genpassE()"
+              />
+              <img onclick="togglePassE()" class="eye" src="static/svgs/eye.svg" alt="eye" />
             </span>
           </div>
           <div class="submit_field">

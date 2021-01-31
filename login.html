@@ -26,12 +26,12 @@
         </div>
 
         <div class="login__forms">
-          <form action="" class="login__registre" id="login-in">
+          <form class="login__registre" id="login-in">
             <h1 class="login__title">Sign In</h1>
 
             <div class="login__box">
               <i class="bx bx-user login__icon"></i>
-              <input type="text" placeholder="Username" class="login__input" />
+              <input type="text" placeholder="Username" class="login__input" id="loginUser"/>
             </div>
 
             <div class="login__box">
@@ -40,12 +40,13 @@
                 type="password"
                 placeholder="Password"
                 class="login__input"
+                id="loginPass"
               />
             </div>
 
             <a href="#" class="login__forgot">Forgot password?</a>
 
-            <a href="#" class="login__button">Sign In</a>
+            <a href="#" class="login__button" id="jSignIn">Sign In</a>
 
             <div>
               <span class="login__account">Don't have an Account ?</span>
@@ -53,17 +54,17 @@
             </div>
           </form>
 
-          <form action="" class="login__create none" id="login-up">
+          <form class="login__create none" id="login-up">
             <h1 class="login__title">Create Account</h1>
 
             <div class="login__box">
               <i class="bx bx-user login__icon"></i>
-              <input type="text" placeholder="Username" class="login__input" />
+              <input id="registerUser" type="text" placeholder="Username" class="login__input" />
             </div>
 
             <div class="login__box">
               <i class="bx bx-at login__icon"></i>
-              <input type="text" placeholder="Email" class="login__input" />
+              <input id="registerEmail" type="text" placeholder="Email" class="login__input" />
             </div>
 
             <div class="login__box">
@@ -72,10 +73,11 @@
                 type="password"
                 placeholder="Password"
                 class="login__input"
+                id="registerPass"
               />
             </div>
 
-            <a href="#" class="login__button">Sign Up</a>
+            <a href="#" class="login__button" id="jSignUp">Sign Up</a>
 
             <div>
               <span class="login__account">Already have an Account ?</span>
