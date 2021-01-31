@@ -112,7 +112,7 @@ function deleteAcc(index) {
   }).then(res => res.json())
   .then(data => {
     if(data.accounts){
-      localStorage.setItem("bearer",data.accounts)
+      localStorage.setItem("accounts",JSON.stringify(data.accounts))
     }else if(data.data.message == "Access Token is expired, get a new Token"){
       window.location.href = "/login.html"
     }else if(data.data.message == "Error while parsing the Access Token!"){
@@ -200,7 +200,7 @@ editBtn.addEventListener("click", function (e) {
     }).then(res => res.json())
     .then(data => {
       if(data.accounts){
-        localStorage.setItem("bearer",data.accounts)
+        localStorage.setItem("accounts",JSON.stringify(data.accounts))
       }else if(data.data.message == "Access Token is expired, get a new Token"){
         window.location.href = "/login.html"
       }else if(data.data.message == "Error while parsing the Access Token!"){
@@ -289,36 +289,34 @@ modalAdd.addEventListener("click", function (e) {
       },
       method: 'POST',
       body:JSON.stringify(myObj)
-    }).then(res => {
-      if(res.status != 200){
-        let data = res.json()
-        if (data.data){
-          if(data.data.message == "Access Token is expired, get a new Token"){
-          localStorage.setItem("bearer",null)
-          window.location.href = "/login.html"
-        }else if(data.data.message == "Error while parsing the Access Token!"){
-          localStorage.setItem("bearer",null)
-          window.location.href = "/login.html"
-        }else{
-          alert("Server Error.")
-        } 
+    }).then(res => res.json())
+    .then(data => {
+      console.log(data)
+          if (data.data){
+            if(data.data.message == "Access Token is expired, get a new Token"){
+            localStorage.setItem("bearer",null)
+            window.location.href = "/login.html"
+          }else if(data.data.message == "Error while parsing the Access Token!"){
+            localStorage.setItem("bearer",null)
+            window.location.href = "/login.html"
+          }else{
+            alert("Server Error.")
+          } 
+        }else if(data.accounts){
+          localStorage.setItem("accounts",JSON.stringify(data.accounts))
+          up = true
         }
-        
-      }else if(res.status == 200){
-        localStorage.setItem("accounts",JSON.stringify(res.json().accounts))
-        up = true
-      }
     })
   }
   if(up){
     showAccounts();
     e.preventDefault();
-    return
-  }
+  }else{
   accObj.push(myObj);
   localStorage.setItem("accounts", JSON.stringify(accObj));
   showAccounts();
   e.preventDefault();
+  }
 });
 
 // search
